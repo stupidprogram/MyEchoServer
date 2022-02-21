@@ -16,12 +16,14 @@
 #include "TypeDef.h"
 
 class Channel;
+class TimerQueue;
 
 class EventLoop
 {
     using Functor = std::function<void ()>;
 public:
     EventLoop();
+    ~EventLoop();
     void updateChannel(Channel*);
 
     bool runInLoop();
@@ -32,10 +34,14 @@ public:
 
     void removeChannel(Channel*);
 
+    void runEvery(int, std::function<void ()>);
+
 private:
     Poller* poller_;
     std::thread::id threadId_;
     std::vector<Channel*> activeChannels_;
+    //TimerQueue* timer_;
+    std::unique_ptr<TimerQueue> timer_;
 
     int wakeupFd_;
     std::unique_ptr<Channel> wakeupChannel_;

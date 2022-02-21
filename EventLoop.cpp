@@ -12,6 +12,7 @@
 #include "EpollPoller.h"
 #include "Channel.h"
 #include "Logger.h"
+#include "TimerQueue.h"
 
 static int createFd()
 {
@@ -26,7 +27,8 @@ EventLoop::EventLoop()
           callPendingFunctor_(false),
           pendingMutex_(),
           quit_(false),
-          activeChannels_(0)
+          activeChannels_(0),
+          timer_(new TimerQueue(this))
 {
     wakeupChannel_->setHandleRead(std::bind(&EventLoop::hanleRead, this));
     wakeupChannel_->enableReading();
@@ -114,3 +116,11 @@ void EventLoop::removeChannel(Channel* channel)
 {
     poller_->removeChannel(channel);
 }
+
+void EventLoop::runEvery(int interval, std::function<void()> cb)
+{
+    timer_->addtimer(interval, std::move(cb));
+    LOG_TRACE << "timer added!";
+}
+
+EventLoop::~EventLoop() = default;

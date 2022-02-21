@@ -166,6 +166,12 @@
 		<Unit filename="/home/ubuntu/code/MyEchoServer/ThreadPool.h">
 			<Option target="EchoServer"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/code/MyEchoServer/TimerQueue.cpp">
+			<Option target="EchoServer"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/code/MyEchoServer/TimerQueue.h">
+			<Option target="EchoServer"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/code/MyEchoServer/TypeDef.h">
 			<Option target="EchoServer"/>
 		</Unit>

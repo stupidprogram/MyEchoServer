@@ -45,6 +45,7 @@ void EchoServer::calmTest(const TcpConnectionPtr& conn, Buffer* buffer)
 {
     std::string message = buffer->getAsString();
     LOG_TRACE << "receive " << message.size() << " bytes from " << conn->name() << ": " << message;
+    loop_->runEvery(1, std::bind(&onTimer, conn));
     std::this_thread::sleep_for(std::chrono::seconds(3));
     conn->send(message);
 }

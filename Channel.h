@@ -51,10 +51,6 @@ public:
     void remove();
 
 private:
-#ifdef DEBUG
-    static int mark;
-    int id_;
-#endif
     static const int kRead;
     static const int kWrite;
     static const int kNone;
