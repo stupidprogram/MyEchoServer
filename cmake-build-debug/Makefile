@@ -528,6 +528,33 @@ TimerQueue.cpp.s:
 	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/TimerQueue.cpp.s
 .PHONY : TimerQueue.cpp.s
 
+WheelVector.o: WheelVector.cpp.o
+
+.PHONY : WheelVector.o
+
+# target to build an object file
+WheelVector.cpp.o:
+	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/WheelVector.cpp.o
+.PHONY : WheelVector.cpp.o
+
+WheelVector.i: WheelVector.cpp.i
+
+.PHONY : WheelVector.i
+
+# target to preprocess a source file
+WheelVector.cpp.i:
+	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/WheelVector.cpp.i
+.PHONY : WheelVector.cpp.i
+
+WheelVector.s: WheelVector.cpp.s
+
+.PHONY : WheelVector.s
+
+# target to generate assembly for a file
+WheelVector.cpp.s:
+	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/WheelVector.cpp.s
+.PHONY : WheelVector.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -663,6 +690,9 @@ help:
 	@echo "... TimerQueue.o"
 	@echo "... TimerQueue.i"
 	@echo "... TimerQueue.s"
+	@echo "... WheelVector.o"
+	@echo "... WheelVector.i"
+	@echo "... WheelVector.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

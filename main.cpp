@@ -7,7 +7,7 @@ int main()
 {
     EventLoop loop;
     InetAddr address(9999);
-    EchoServer server(&loop, address);
+    EchoServer server(&loop, address, 8);
     LOG_TRACE << "TEST START";
     server.start();
     loop.loop();

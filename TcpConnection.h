@@ -8,6 +8,7 @@
 #include <memory>
 #include <utility>
 #include <string>
+#include <any>
 
 #include "Socket.h"
 #include "Channel.h"
@@ -40,10 +41,19 @@ public:
 
     void connectionDestroy();
 
+    void shutdown();
+
+    std::any getContext()
+    { return context_; }
+
+    void setContext(const std::any& context)
+    { context_ = context; }
+
 private:
     std::unique_ptr<Socket> socket_;
     std::unique_ptr<Channel> channel_;
     const std::string name_;
+    std::any context_;
 
     EventLoop* loop_;
 

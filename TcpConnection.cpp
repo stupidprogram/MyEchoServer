@@ -99,3 +99,8 @@ void TcpConnection::connectionDestroy()
     channel_->disableAll();
     channel_->remove();
 }
+
+void TcpConnection::shutdown()
+{
+    handleClose();
+}

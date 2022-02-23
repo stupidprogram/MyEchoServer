@@ -37,7 +37,7 @@ void TcpServer::handleConnection(int fd, const InetAddr& addr)
     conn->setCloseCallback(std::bind(&TcpServer::handleClose, this, std::placeholders::_1));
 
     if (connectionCallback_)
-        connectionCallback_();
+        connectionCallback_(conn);
 
     LOG_TRACE << name << " connect to this server";
 }

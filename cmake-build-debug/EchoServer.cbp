@@ -175,6 +175,12 @@
 		<Unit filename="/home/ubuntu/code/MyEchoServer/TypeDef.h">
 			<Option target="EchoServer"/>
 		</Unit>
+		<Unit filename="/home/ubuntu/code/MyEchoServer/WheelVector.cpp">
+			<Option target="EchoServer"/>
+		</Unit>
+		<Unit filename="/home/ubuntu/code/MyEchoServer/WheelVector.h">
+			<Option target="EchoServer"/>
+		</Unit>
 		<Unit filename="/home/ubuntu/code/MyEchoServer/main.cpp">
 			<Option target="EchoServer"/>
 		</Unit>

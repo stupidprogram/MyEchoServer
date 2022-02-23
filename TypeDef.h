@@ -15,7 +15,7 @@ using TcpConnectionPtr = std::shared_ptr<TcpConnection>;
 
 using ReadCallback = std::function<void (const TcpConnectionPtr&, Buffer*)>;
 using WriteCallback = std::function<void ()>;
-using ConnectionCallback = std::function<void ()>;
+using ConnectionCallback = std::function<void (const TcpConnectionPtr&)>;
 using CloseCallback = std::function<void (const TcpConnectionPtr&)>;
 
 #endif //ECHOSERVER_TYPEDEF_H
