@@ -57,6 +57,7 @@ CMakeFiles/EchoServer.dir/EventLoop.cpp.o: ../EventLoop.h
 CMakeFiles/EchoServer.dir/EventLoop.cpp.o: ../LogStream.h
 CMakeFiles/EchoServer.dir/EventLoop.cpp.o: ../Logger.h
 CMakeFiles/EchoServer.dir/EventLoop.cpp.o: ../Poller.h
+CMakeFiles/EchoServer.dir/EventLoop.cpp.o: ../ThreadPool.h
 CMakeFiles/EchoServer.dir/EventLoop.cpp.o: ../TimerQueue.h
 CMakeFiles/EchoServer.dir/EventLoop.cpp.o: ../TypeDef.h
 

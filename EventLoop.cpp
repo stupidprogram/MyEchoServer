@@ -13,6 +13,7 @@
 #include "Channel.h"
 #include "Logger.h"
 #include "TimerQueue.h"
+#include "ThreadPool.h"
 
 static int createFd()
 {
@@ -30,6 +31,7 @@ EventLoop::EventLoop()
           activeChannels_(0),
           timer_(new TimerQueue(this))
 {
+    ThreadPool::setThreadName("Epoll loop");
     wakeupChannel_->setHandleRead(std::bind(&EventLoop::hanleRead, this));
     wakeupChannel_->enableReading();
 }
@@ -94,6 +96,7 @@ void EventLoop::loop()
 {
     while (!quit_)
     {
+        LOG_DEBUG << "current thread is " << ThreadPool::getThreadName();
         activeChannels_.clear();
         poller_->getActiveChannels(activeChannels_);
         LOG_DEBUG << "get event from poller";

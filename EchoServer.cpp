@@ -50,7 +50,7 @@ void EchoServer::calmTest(const TcpConnectionPtr& conn, Buffer* buffer)
     LOG_TRACE << "receive " << message.size() << " bytes from " << conn->name() << ": " << message;
     // std::this_thread::sleep_for(std::chrono::seconds(3));
     conn->send(message);
-    LOG_DEBUG << "get context from TcpConnection";
+    LOG_DEBUG << "get context from TcpConnection in thread: " << ThreadPool::getThreadName();
     WeakEntryPtr weakEntryPtr = std::any_cast<WeakEntryPtr>(conn->getContext());
     wheels_.back().push_back(weakEntryPtr.lock());
     LOG_DEBUG << "Entry has pushed to wheels in EchoSever::calmTest";

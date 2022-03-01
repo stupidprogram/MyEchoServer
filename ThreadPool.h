@@ -11,6 +11,7 @@
 #include <deque>
 #include <atomic>
 #include <condition_variable>
+#include <string>
 
 class ThreadPool
 {
@@ -19,6 +20,8 @@ public:
 
     void run(std::function<void ()> cb);
 
+    static std::string getThreadName();
+    static void setThreadName(const std::string& name);
 private:
     std::vector<std::deque<std::function<void ()>>> functionList_;
     std::vector<std::mutex> mutexList_;
